@@ -20,6 +20,10 @@ La aplicación debe mostrar un teléfono que cumpla con las siguientes caracter�
       - Keyboard
         - Key
 
+## Jest Testing
+
+![Jest coverage 100%](./public/img/jest-coverage.jpg)
+
 ## Listado de responsabilidades
 
 - Info:
