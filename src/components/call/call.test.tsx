@@ -32,4 +32,3 @@ describe("Given the call component", () => {
     });
   });
 });
-test("renders learn react link", () => {});
