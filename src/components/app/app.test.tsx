@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import App from "./app";
-import { store } from "../store/store";
+import { store } from "../../store/store";
 
 test("renders learn react link", () => {
   render(
@@ -11,6 +11,6 @@ test("renders learn react link", () => {
     </Provider>
   );
 
-  const element = screen.getByText(/learn/i);
+  const element = screen.getByRole("list");
   expect(element).toBeInTheDocument();
 });

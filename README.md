@@ -20,24 +20,34 @@ La aplicación debe mostrar un teléfono que cumpla con las siguientes caracter�
       - Keyboard
         - Key
 
+## Jest Testing
+
+![Jest coverage 100%](./public/img/jest-coverage.jpg)
+
 ## Listado de responsabilidades
 
-- Info: contiene el mensaje correspondiente a la llamada.
-- Display: contiene el número al que se está llamando.
-- Keyboard: contiene a todas las teclas
+- Info:
+        - Recibe información del estado
+        - Renderiza un texto en función del valor recibido
+- Display:
+        - Recibe del estado la información del número que se está marcando
+        - Renderiza el número de forma dinámica conforme lo introduce el usuario
 
+- Keyboard:
+        - Renderiza las teclas y los botones de Llamar y Colgar
   - Key:
-
-    - Contiene los botones numéricos.
-    - Actualiza el estado referido al número mostrado en display.
+        - Recibe del estado el número y los métodos para actualizar la propiedad número al hacer click.
+        - Renderiza los botones numéricos y de borrado. Comprueba el valor del número para desactivar los botones.
 
 - Actions va a ser el contexto:
-  - Contiene y gestiona el custom Hook que gestiona los estados.
-  - Actualiza el número mostrado en display.
-  - Compueba la longitud del número marcado.
-  - Actualiza el estado de los botones llamar y colgar.
-  - Actualiza el mensaje de info.
+  - Renderiza los botones de llamar y colgar
 
-- Action:
-        - Contiene los botones llamar y colgar
-        - Actualiza el estado para "Actions"
+- Call:
+        - Renderiza el botón de llamar para un determinado valor del estado
+        - Recibe del estado el valor de phone y actualización de isCalling
+        - Interacciona onClick para actualizar el valor de isCalling y de number
+
+- Hang:
+        - Renderiza el botón de colgar para un determinado valor del estado
+        - Recibe del estado el valor de isCalling
+        - Interacciona onClick para actualizar el valor de isCalling
