@@ -5,6 +5,12 @@ export const store = configureStore({
   reducer: {
     phone: phoneReducer,
   },
+  preloadedState: {
+    phone: {
+      number: "1234",
+      isCalling: false,
+    },
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
