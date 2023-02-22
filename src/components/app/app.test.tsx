@@ -11,6 +11,6 @@ test("renders learn react link", () => {
     </Provider>
   );
 
-  const element = screen.getByText(/learn/i);
+  const element = screen.getByRole("list");
   expect(element).toBeInTheDocument();
 });
