@@ -1,11 +1,14 @@
-import React from "react";
+import { Actions } from "../actions/action";
+import { Info } from "../info/info";
+import { Keyboard } from "../keyboard/keyboard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Teléfono ISDI (Redux version)</h2>
-      </header>
+    <div className="container">
+      <Info></Info>
+      <Keyboard>
+        <Actions></Actions>
+      </Keyboard>
     </div>
   );
 }
