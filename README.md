@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# Week 6 Challenge 3
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+## Creación de una aplicación web de teléfono con Redux
 
-## Available Scripts
+La aplicación debe mostrar un teléfono que cumpla con las siguientes características:
 
-In the project directory, you can run:
+- Se debe poder escribir un número de teléfono clicando en los botones numéricos. La tecla borrar borra el número completo.
+- Sólo se verá o el botón Llamar o el botón Colgar, nunca los dos a la vez.
+- No se puede introducir un número de más de 9 cifras.
+- El botón Llamar sólo se puede pulsar si el número tiene 9 cifras. Cuando tenga 9 cifras el botón debe tener la clase "active".
+- El mensaje superior "Llamando..." sólo aparece cuando se pulsa el botón "Llamar" y mientras dure la llamada. Usa la clase "off" para controlar su visibilidad (el elemento HTML correspondiente debe seguir estando, aunque no se vea).
+- Al pulsar el botón "Llamar", éste debe desaparecer del DOM y debe aparecer en su lugar el botón "Colgar". El teclado tiene que quedar deshabilitado.
+- Al pulsar el botón "Colgar", éste debe desaparecer y debe aparecer en su lugar el botón "Llamar". El teclado tiene que habilitarse. Además, se debe borrar el número de teléfono.
+- Si no ocurre nada tras cinco segundos de llamada, ésta se debe colgar automáticamente.
+- Todo debe estar separado en los siguientes componentes:
+      - Info
+      - Display
+      - Actions
+        - Action
+      - Keyboard
+        - Key
 
-### `npm start`
+## Listado de responsabilidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Info: contiene el mensaje correspondiente a la llamada.
+- Display: contiene el número al que se está llamando.
+- Keyboard: contiene a todas las teclas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  - Key:
 
-### `npm test`
+    - Contiene los botones numéricos.
+    - Actualiza el estado referido al número mostrado en display.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Actions va a ser el contexto:
+  - Contiene y gestiona el custom Hook que gestiona los estados.
+  - Actualiza el número mostrado en display.
+  - Compueba la longitud del número marcado.
+  - Actualiza el estado de los botones llamar y colgar.
+  - Actualiza el mensaje de info.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Action:
+        - Contiene los botones llamar y colgar
+        - Actualiza el estado para "Actions"
